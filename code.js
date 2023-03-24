@@ -1,3 +1,6 @@
+    // onload of page get all data
+    window.onload = getAllData;
+
     $("#addData-form").submit(function (event)
     {
         var name = $("#name").val();
@@ -31,6 +34,7 @@
                 }
             });
         }
+        getAllData();
         event.preventDefault();
     });
 
