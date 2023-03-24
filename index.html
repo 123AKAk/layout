@@ -7,13 +7,14 @@
     <title>Layout</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
 </head>
 <body>
-    <div>
-        <!-- mb-2 mb-lg-0 -->
-        <div id="rc_logo">
-            <a href="#home" title="Logo">Logo</a> <!-- Swap this placeholder out for your logo image -->
+    <div class="navigation">
+            <!-- mb-2 mb-lg-0 -->
+            <div class="logo">
+                <a href="#home" title="Logo">Logo</a> 
             </div>  
             
             <div class="rc_nav" id="centered_nav">
@@ -21,27 +22,246 @@
                 <a href="#about" title="About">About</a>
                 <a href="#services" title="Services">Services</a>
                 <a href="#product" title="Contact">Product</a>
-                <a href="javascript:void(0);" title="Menu" style="font-size:18px;" class="icon" onclick="myFunction()">&#9776;</a>
-                <a href="#home" class="callt" title="Call to Action">Call to Action</a>
+            </div>
+            <div class="rc_cl" id="centered_nav">
+                <a href="javascript:void(0);" title="Menu" class="icon" onclick="myFunction()" id="ham">&#9776;</a>
+                <button class="navbtn">Call to Action</button>
             </div>
         </div>
-            
-            
-        <div class="container rc_content">
-            <h3>Responsive Centered Navigation Menu</h3>
-            <p>Resize the browser window to see the menu respond</p>
-        </div>
     </div>
+
+    <section class="container startm">
+        <div class="row ">
+            <div class="col-md-6 ">
+                <div class="container">
+                    <div class="row1">
+                        <h1>
+                            Lorem ipsum dolor sit amet consectetur
+                        </h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum esse exercitationem nulla velit, quisquam dignissimos totam cupiditate voluptatem?</p>
+                    </div>
+                    <div class="row1">
+                        <button class="btn1 mr-2">Call to Action</button>
+                        <button class="btn2">See Workspace</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="container starte">
+                    <div class="box2" ></div>
+                    <div class="stack-top"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Header Text</h4>
+                <p class="">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis doloremque ipsum aliquam earum quam minima ipsam maiores! Ex molestiae, earum inventore debitis eveniet, vel at totam, unde natus aut eum!
+                </p>
+            </div>
+            <div class="col-md-4">
+                <div class=" sec2">
+
+                </div>
+            </div>
+            <div class="col-md-4 sec3">
+                <h4>Header Text</h4>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum illum suscipit molestiae beatae quam atque asperiores ipsam facilis expedita rem praesentium, porro dolorem nulla, odit iste nisi. Illo, vero necessitatibus.
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section class="container bgall ">
+        <div class="row">
+            <div class="col-md-6 boxa">
+                <div class="container">
+                    <div class="box3" ></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="container2">
+                    <div class="">
+                        <h1>
+                            Lorem ipsum dolor sit amet consectetur
+                        </h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum esse exercitationem nulla velit, quisquam dignissimos totam cupiditate voluptatem?</p>
+                    </div>
+                    <div class="">
+                        <button class="btn1 mr-2">Call to Action</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
         
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="parent">
+                        <h2 class="child">Products</h2>
+                        <input class="inp1 child" type="text" placeholder="Search for keywords..." value="" name="search"/>
+                    </div>
+                    <br>
+                    <table class="table">
+                        <thead class="theadss">
+                          <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Eyo</th>
+                            <td>100</td>
+                            <td>
+                                <button class="btna1 mr-2" onclick="editData('1')">Edit</button>
+                                <button class="btna2" onclick="deleteData('1')">Delete</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Eyo</th>
+                            <td>100</td>
+                            <td>
+                                <button class="btna1 mr-2" onclick="editData('1')">Edit</button>
+                                <button class="btna2" onclick="deleteData('1')">Delete</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Eyo</th>
+                            <td>100</td>
+                            <td>
+                                <button class="btna1 mr-2" onclick="editData('1')">Edit</button>
+                                <button class="btna2" onclick="deleteData('1')">Delete</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <div class="form1 col">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <br>
+                            <h4>Header Text</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quae facere debitis? Porro et saepe</p>
+                            <br>
+                            <input class="inp2" type="text" name="name" placeholder="Name" value="">
+                            <br>
+                            <input class="inp2" type="number" name="price" placeholder="Price" value="">
+                            <br>
+                            <button class="btn3 mr-2">Call to Action</button>
+                            <br><br><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <section class="container bgall ">
+        <div class="row">
+            <div class="col-md-6 boxa">
+                <div class="container">
+                    <div class="box3" ></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="container2">
+                    <div class="">
+                        <h1>
+                            Lorem ipsum dolor sit amet consectetur
+                        </h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum esse exercitationem nulla velit, quisquam dignissimos totam cupiditate voluptatem?</p>
+                    </div>
+                    <div class="">
+                        <button class="btn1 mr-2">Call to Action</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container axez">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <h4>TEXT AND BUTTON</h4>
+                    <div class="col-6">                
+                        <div class="sty1">
+                            <p>#000000</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="sty2">
+                            <p>#636262</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <h4>IMAGES</h4>
+                    <div class="col-6">                
+                        <div class="sty3">
+                            <p>#000000</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="sty4">
+                            <p>#636262</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <h4>BACKGROUND</h4>
+                    <div class="col-6">                
+                        <div class="sty5">
+                            <p>#000000</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="sty6">
+                            <p>#636262</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     <script>
         function myFunction() {
-        var x = document.getElementById("centered_nav");
-        if (x.className === "rc_nav") {
-            x.className += " responsive";
-        } else {
-            x.className = "rc_nav";
+            var x = document.getElementById("centered_nav");
+            if (x.className === "rc_nav") {
+                x.className += " responsive";
+                document.getElementById("ham").innerHTML = "&#x2715;"
+            } else {
+                x.className = "rc_nav";
+                document.getElementById("ham").innerHTML = "&#9776;"
+            }
         }
-    }
+        function editData(dtId)
+        {
+
+        }
+        function deleteData(dtId)
+        {
+
+        }
     </script>
 </body>
 </html>
