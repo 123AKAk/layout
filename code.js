@@ -1,5 +1,5 @@
     // onload of page get all data
-    window.onload = getAllData;
+    //window.onload = getAllData;
 
     $("#addData-form").submit(function (event)
     {
