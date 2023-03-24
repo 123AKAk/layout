@@ -1,64 +1,110 @@
-$("#signup-form").submit(function (event)
-  {
-      reset();
-      var username = $("#username").val();
-      var email = $("#email").val();
-      var country = $("#country").val();
-      var gender = $("#gender").val();
-      var password = $("#password").val();
-      var confrimpassword = $("#confrimpassword").val();
-      var agreed = $("#agreed").val();
+    $("#addData-form").submit(function (event)
+    {
+        var name = $("#name").val();
+        var price = $("#price").val();
 
-      if (
-          username == "" ||
-          email == "" ||
-          country == "" ||
-          gender == "" ||
-          password == "" ||
-          confrimpassword == ""
-      ) {
-          alertify.error("Fill all Input Feilds");
-      } else {
-          if (ValidateEmail(email) == false) {
-          alertify.error("Invalid Email, use a Valid Email");
-          } else {
-          if (password != confrimpassword) {
-              alertify.error("Passwords are not the same");
-          } else {
-              if ($("#agreed").is(":checked")) {
-              let formdata = new FormData();
-              formdata.append("username", username);
-              formdata.append("email", email);
-              formdata.append("gender", gender);
-              formdata.append("password", password);
-              formdata.append("user_ip_address", "ipaddress");
-              formdata.append("user_country", country);
+        if (name == "" || price == "")
+        {
+            alertify.error("Fill all Input Feilds");
+        }
+        else
+        {
+           
+            let formdata = new FormData();
+            formdata.append("name", name);
+            formdata.append("price", price);
+            
+            let loca = "classes/components/userComponents.php?dataPurpose=addData";
+            fetch(loca, { method: "POST", body: formdata })
+                .then((res) => res.json())
+                .then((data) => {
+                console.log(data);
+                var result = (data);
+                if (result.response == true) 
+                {
+                    alertify.success(result.message);
+                }
+                else
+                {
+                    alertify.set({ delay: 15000 });
+                    alertify.error(result.message);
+                }
+            });
+        }
+        event.preventDefault();
+    });
 
-              let loca = "classes/components/userComponents.php?dataPurpose=signup";
-              fetch(loca, { method: "POST", body: formdata })
-                  .then((res) => res.json())
-                  .then((data) => {
-                  console.log(data);
-                  var result = (data);
-                  if (result.response == true) 
-                  {
-                      alertify.success(result.message);
-                      alertify.message("Redirecting...");
-                      setTimeout(function () {
-                      window.location.replace("login.php?loginMsg=1");
-                      }, 3000);
+    function getAllData()
+    {
+        let formdata = new FormData();
+        formdata.append("getData", '1')
 
-                  } else {
-                      alertify.set({ delay: 15000 });
-                      alertify.error(result.message);
-                  }
-                  });
-              } else {
-              alertify.error("Accpet Terms and Agreement to continue");
-              }
-          }
-          }
-      }
+        fetch("classes/components/userComponents.php?dataPurpose=getAllData", {
+                method: "POST",
+                body: formdata,
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                
+                //adds the data the table
+                document.getElementById("showdata").innerHTML = data;
+        });
+    }
 
-      event.preventDefault();
-  });
+    function editData(pid)
+    {
+        var name = $("#name").val();
+        var price = $("#price").val();
+
+        let formdata = new FormData();
+        formdata.append("name", name)
+        formdata.append("price", price)
+        formdata.append("pid", pid)
+        
+        fetch("classes/components/userComponents.php?dataPurpose=editData", {
+                method: "POST",
+                body: formdata,
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                
+                var result = (data);
+                if (result.response == true) 
+                {
+                    alertify.success(result.message);
+                }
+                else
+                {
+                    alertify.set({ delay: 15000 });
+                    alertify.error(result.message);
+                }
+        });
+    }
+
+    function deleteData(pid)
+    {
+        let formdata = new FormData();
+        formdata.append("pid", pid)
+        
+        fetch("classes/components/userComponents.php?dataPurpose=deleteData", {
+                method: "POST",
+                body: formdata,
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                
+                var result = (data);
+                if (result.response == true) 
+                {
+                    alertify.success(result.message);
+                }
+                else
+                {
+                    alertify.set({ delay: 15000 });
+                    alertify.error(result.message);
+                }
+        });
+    }

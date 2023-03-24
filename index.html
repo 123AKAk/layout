@@ -117,7 +117,31 @@
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="showdata">
+                          <tr>
+                            <th scope="row">Eyo</th>
+                            <td>100</td>
+                            <td>
+                                <button class="btna1 mr-2" onclick="editData('1')">Edit</button>
+                                <button class="btna2" onclick="deleteData('1')">Delete</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Eyo</th>
+                            <td>100</td>
+                            <td>
+                                <button class="btna1 mr-2" onclick="editData('1')">Edit</button>
+                                <button class="btna2" onclick="deleteData('1')">Delete</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Eyo</th>
+                            <td>100</td>
+                            <td>
+                                <button class="btna1 mr-2" onclick="editData('1')">Edit</button>
+                                <button class="btna2" onclick="deleteData('1')">Delete</button>
+                            </td>
+                          </tr>
                           <tr>
                             <th scope="row">Eyo</th>
                             <td>100</td>
@@ -147,16 +171,16 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form1 col">
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form id="addData-form">
                             <br>
                             <h4>Header Text</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quae facere debitis? Porro et saepe</p>
                             <br>
-                            <input class="inp2" type="text" name="name" placeholder="Name" value="">
+                            <input class="inp2" type="text" name="name" id="name" placeholder="Name" value="">
                             <br>
-                            <input class="inp2" type="number" name="price" placeholder="Price" value="">
+                            <input class="inp2" type="number" name="price" id="price" placeholder="Price" value="">
                             <br>
-                            <button class="btn3 mr-2">Call to Action</button>
+                            <button class="btn3 mr-2" type="submit">Call to Action</button>
                             <br><br><br>
                         </form>
                     </div>
